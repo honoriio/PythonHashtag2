@@ -20,13 +20,13 @@ def calculo_litros(area, litros):  # Lembrete, Não preciso usar o nome externo 
     if quantia_galao > int(quantia_galao):
         quantia_galao = int(quantia_galao) + 1
 
-    print('-' * 60)
-    print('Informe o que deseja'.center(60))
-    print('-' * 60)
+    print('-' * 120)
+    print('Informe o que deseja'.center(120))
+    print('-' * 120)
     print('[1] - Lata de 18 Litros')
     print('[2] - Galões de 3.6 litros')
     print('[3] - Misturar Galões e Latas "Essa opção gera menor desperdicio de tinta."')
-    print('-' * 60)
+    print('-' * 120)
     opcao = int(input('Opção: '))
 
     if opcao == 1:
