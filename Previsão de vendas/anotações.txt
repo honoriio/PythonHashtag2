@@ -1,0 +1,9 @@
+ 
+ correção
+
+ 1 - fazer a correção da exibição dos dados na tela para o usuario 
+ 2 - organizar as funções e ver se tem alguma quebrada.
+ 3 - comentar o codigo para o mesmo ficar mais organizado 
+ 4 - fazer as correções necessarias nas funções de soma, e organização dos dados inseridos no banco de dados ( dicionario)
+
+ 
