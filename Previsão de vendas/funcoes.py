@@ -49,9 +49,13 @@ def menu():
 def adicionar_item(lista):
     produto = input('Digite o nome do produto: ')
     try:
-        vendas = float(input('Informe as vendas do mes atual: '))
-        taxa = float(input('Informe a taxa de crescimento: '))
-        lista[produto] = vendas, taxa
+        vendas = input('Informe as vendas do mes atual: ')
+        vendas_corrigido= float(vendas.replace("," ,".")) # troca virgula por ponto
+
+        taxa = input('Informe a taxa de crescimento: ')
+        taxa_corrigida = float(taxa.replace("," , "."))
+        
+        lista[produto] = vendas_corrigido, taxa_corrigida
     except ValueError:
         print('Valor ifnormado invalido, por favor informe somente números.')
     
