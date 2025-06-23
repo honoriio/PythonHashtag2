@@ -1,16 +1,18 @@
-carro = {"nome": ['Marcos'],
-         "Idade": ['27']}
 
+vendedores = {}
 
+while True:
+    
+    vendedor = input('Informe o nome do vendedor: ')
+    vendas = float(input('Innforme a quantia de vendas: '))
 
-nome = input('informe um nome: ')
-carro['nome'].append(nome)
+    vendedores [vendedor] = vendas
 
+    opc = input('Deseja sair? ')
 
-print(carro)
+    if opc == 'nao':
+        break
+    else:
+        continue
 
-#del carro["nome"]
-print(carro)
-
-
-print("nome" in carro)
+print(vendedores)
