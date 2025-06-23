@@ -1,5 +1,10 @@
 # Local destinado as importações 
-from funcoes import cadastro, imprimir
+from funcoes import gerenciar_cadastro, imprimir
 
-cadastro()
 
+def main():
+    gerenciar_cadastro()
+    imprimir(gerenciar_cadastro)
+
+if __name__ == '__main__':
+    main()
