@@ -5,9 +5,14 @@ def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def cadastro():
-    vendedor = input('Informe o nome do vendedor: ')
-    vendas = input('Informe as vendas: ').replace(",", ".")
-    vendas_corrigido = float(vendas)
+    while True:
+        vendedor = input('Informe o nome do vendedor: ')
+        vendas = input('Informe as vendas: ').replace(",", ".")
+        try:
+            vendas_corrigido = float(vendas)
+            break
+        except ValueError:
+            print('Valor informado invalido, Por favor informe um valor valido.')
     return vendedor, vendas_corrigido
 
 def gerenciar_cadastro():

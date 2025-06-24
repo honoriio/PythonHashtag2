@@ -16,3 +16,9 @@ while True:
         continue
 
 print(vendedores)
+
+remover = input('Iforme o irtem que quer remover: ')
+
+vendedores.pop(remover, None)
+
+print(vendedores)
