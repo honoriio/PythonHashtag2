@@ -1,24 +1,13 @@
 
-vendedores = {}
+coisas = ()
 
-while True:
-    
-    vendedor = input('Informe o nome do vendedor: ')
-    vendas = float(input('Innforme a quantia de vendas: '))
+coisa = input('informe uma coisa: ')
 
-    vendedores [vendedor] = vendas
+coisas = coisa
 
-    opc = input('Deseja sair? ')
+coisa = input('informe uma coisa: ')
 
-    if opc == 'nao':
-        break
-    else:
-        continue
+coisas = coisa
 
-print(vendedores)
-
-remover = input('Iforme o irtem que quer remover: ')
-
-vendedores.pop(remover, None)
-
-print(vendedores)
+for c in coisas:
+    print(c)

@@ -26,10 +26,15 @@ def gerenciar_cadastro():
         else:
             lista_clientes[cliente] = [compras]   
 
-        opc = input('Deseja continuar? (S/N): ').strip().upper()
-
-        if opc in ['NAO', 'N', 'NÃO']:  
-            return lista_clientes
+        while True:
+            opc = input('Deseja continuar? (S/N): ').strip().upper()
+            if opc in ['NAO', 'N', 'NÃO']:
+                return lista_clientes
+            elif opc in ['SIM', 'S']:
+                break
+            else:
+                print('Por favor informe se SIM ou NÃO.')
+        
         
 
 def ranking(lista_clientes):
