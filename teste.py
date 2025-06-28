@@ -1,13 +1,7 @@
+import subprocess as app 
 
-coisas = ()
+ip = '192.168.0.1'
 
-coisa = input('informe uma coisa: ')
+for i in range(500):
+    app.Popen(['ping', ip])
 
-coisas = coisa
-
-coisa = input('informe uma coisa: ')
-
-coisas = coisa
-
-for c in coisas:
-    print(c)
