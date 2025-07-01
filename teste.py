@@ -1,7 +1,7 @@
-import subprocess as app 
+import numpy as np
 
-ip = '192.168.0.1'
+vendas = np.random.randint(1000, 3000, 50)
+meses = np.arange(1, 51)
 
-for i in range(500):
-    app.Popen(['ping', ip])
-
+print(vendas)
+print(meses)
