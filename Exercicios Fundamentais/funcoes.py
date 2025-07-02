@@ -30,7 +30,11 @@ def imposto_mensal(dados):
     
 
 def imposto_trimestral(dados):
-
+    # Valores dos impostos trimestrais. 
+    ir = 0.048
+    ir_adc = 0.10
+    csll = 0.0288
+    
     # Criar a função que faz o calculo do imposto trimestral
     return None
 
@@ -46,6 +50,3 @@ def dicionario(resultado_imposto_mensal, faturamentos):
         }
 
     return resultado
-
-
-    
