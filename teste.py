@@ -1,7 +1,22 @@
-import numpy as np
+import qrcode
 
-vendas = np.random.randint(1000, 3000, 50)
-meses = np.arange(1, 51)
+import qrcode
 
-print(vendas)
-print(meses)
+# Dados a serem codificados no QR code
+data = "https://www.example.com"
+
+# Cria um objeto QRCode
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4,
+)
+qr.add_data(data)
+qr.make(fit=True)
+
+# Cria a imagem do QR code
+img = qr.make_image(fill_color="black", back_color="white")
+
+# Salva a imagem
+img.save("qrcode.png")
