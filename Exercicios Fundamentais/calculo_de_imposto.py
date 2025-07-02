@@ -1,5 +1,5 @@
 # Area destianda as importações
-from funcoes import conversao, imposto_mensal, dicionario
+from funcoes import conversao, imposto_mensal, dicionario, imposto_trimestral
 
 # Dicionario de faturamento mensal
 faturamento = {
@@ -19,5 +19,8 @@ faturamento = {
 
 faturamento_convertido = conversao(faturamento)
 imposto = imposto_mensal(faturamento_convertido)
+imposto_tri = imposto_trimestral(faturamento_convertido)
 
-dicionario(imposto, faturamento)
+resultado = dicionario(imposto, imposto_tri, faturamento)
+
+print(resultado)

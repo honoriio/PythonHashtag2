@@ -30,23 +30,49 @@ def imposto_mensal(dados):
     
 
 def imposto_trimestral(dados):
-    # Valores dos impostos trimestrais. 
-    ir = 0.048
-    ir_adc = 0.10
-    csll = 0.0288
+    resultado_trimestral = {}
     
-    # Criar a função que faz o calculo do imposto trimestral
-    return None
+    # Alíquotas
+    ir = 0.048
+    ir_adc = 0.10  # Adicional sobre o que passar de 20 mil trimestral
+    csll = 0.0288
+
+    imposto = ir + csll
+
+    # Separar os meses por trimestre
+    meses = list(dados.keys())
+    
+    for i in range(0, len(meses), 3):
+        trimestre = meses[i:i+3]
+        soma_trimestre = sum([dados[mes] for mes in trimestre])
+        
+        valor_imposto_tri = soma_trimestre * imposto
+
+        # Se exceder 20 mil, calcular o IR adicional
+        ir_adicional = 0
+        if soma_trimestre > 20000:
+            excesso = soma_trimestre - 20000
+            ir_adicional = excesso * ir_adc
+        
+        resultado_trimestral[f'Trimestre {i//3 + 1}'] = {
+            'Faturamento': soma_trimestre,
+            'Imposto': valor_imposto_tri,
+            'IR Adicional': ir_adicional,
+            'Imposto Total': valor_imposto_tri + ir_adicional
+        }
+
+    return resultado_trimestral
 
 
 
-def dicionario(resultado_imposto_mensal, faturamentos):
+def dicionario(resultado_imposto_mensal, resultado_imposto_trimestral, faturamentos):
     resultado = {}
 
     for mes in faturamentos.keys():
-        resultado[mes] = {
-            'faturamento': faturamentos[mes],
-            'imposto_mensal': resultado_imposto_mensal.get(mes, 0)  # Caso não tenha imposto, usa 0
-        }
+        resultado[mes] = (
+            faturamentos[mes],  # Faturamento
+            resultado_imposto_mensal.get(mes, 0),  # Imposto mensal
+            resultado_imposto_trimestral.get(mes, 0)  # Imposto trimestral
+        )
 
     return resultado
