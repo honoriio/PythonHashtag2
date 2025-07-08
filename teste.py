@@ -1,11 +1,7 @@
 import numpy as np
 
-carros = {'BMW': 5000,
-          'AUDI': 8000}
+rng = np.random.default_rng()
 
-juros = 1.9
+aleatorio = rng.random() * 20
 
-# Somando os valores dos carros
-carros_juros = np.sum([carros['BMW'], carros['AUDI']])
-
-print(carros_juros)
+print(aleatorio)
