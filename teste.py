@@ -1,7 +1,4 @@
 import numpy as np
 
-rng = np.random.default_rng()
-
-aleatorio = rng.random() * 20
-
-print(aleatorio)
+arr = np.arange(48).reshape(2, 2, 3, 4)
+print(arr)
