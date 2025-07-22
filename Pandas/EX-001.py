@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 from IPython.display import display
 
@@ -22,6 +23,15 @@ vendas_df = vendas_df.merge(produtos_df, on='ID Produto')
 vendas_df = vendas_df.merge(lojas_df, on='ID Loja')
 vendas_df = vendas_df.merge(clientes_df, on='ID Cliente')
 
+
+# Renomeia a coluna.
+vendas_df = vendas_df.rename(columns={'E-mail': 'E-mail do Cliente'})
+
+
+frequencia_clientes = vendas_df['E-mail do Cliente'].value_counts()
+
+
 # Exibição
-display(lojas_df)
-display(clientes_df)
+display(frequencia_clientes)
+frequencia_clientes[:5].plot(figsize=(15, 5))
+plt.show()
